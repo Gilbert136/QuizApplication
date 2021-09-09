@@ -19,5 +19,9 @@
             <view:DetailSectionView/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type viewModel:SideBarSectionViewModel}">
+            <view:SideBarSectionView/>
+        </DataTemplate>
+
     </Application.Resources>
 </Application>

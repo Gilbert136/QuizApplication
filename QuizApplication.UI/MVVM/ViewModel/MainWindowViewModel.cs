@@ -53,6 +53,20 @@ namespace QuizApplication.UI.MVVM.ViewModel
             }
         }
 
+        public SideBarSectionViewModel SideBarSectionVM { get; set; }
+
+        private object _sideBarSectionView;
+
+        public object SideBarSectionView
+        {
+            get { return _sideBarSectionView; }
+            set
+            {
+                _sideBarSectionView = value;
+                OnPropertyChanged();
+            }
+        }
+
         public MainWindowViewModel()
         {
             InformationSectionVM = new InformationSectionViewModel();
@@ -63,6 +77,9 @@ namespace QuizApplication.UI.MVVM.ViewModel
 
             DetailSectionVM = new DetailSectionViewModel();
             DetailSectionView = DetailSectionVM;
+
+            SideBarSectionVM = new SideBarSectionViewModel();
+            SideBarSectionView = SideBarSectionVM;
         }
     }
 }

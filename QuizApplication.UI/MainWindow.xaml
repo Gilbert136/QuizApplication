@@ -13,7 +13,7 @@
     </Window.DataContext>
     
     <Window.Resources>
-        <Style x:Key="FocusVisual">
+        <!--<Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
                 <Setter.Value>
                     <ControlTemplate>
@@ -56,14 +56,11 @@
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsChecked" Value="True">
-                                    <Setter Property="Background" TargetName="border" Value="#f2f4f8"/>
+                                    <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
                                     <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
                                 </Trigger>
-                                <!--<Trigger Property="IsDefaulted" Value="true">
-                                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                                </Trigger>-->
-                                <!--<Trigger Property="IsMouseOver" Value="true">
-                                    <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
                                     <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
                                 </Trigger>
                                 <Trigger Property="IsPressed" Value="true">
@@ -71,22 +68,16 @@
                                     <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
                                 </Trigger>
                                 <Trigger Property="IsEnabled" Value="true">
-                                    --><!--<Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
-                                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>-->
-                                    <!--<Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>--><!--
-                                </Trigger>-->
+                                    <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                    <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                                </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
             </Style.Setters>
-
-            <!--<Style.Triggers>
-                <Trigger Property="IsChecked" Value="True">
-                    <Setter Property="Background" Value="#22202f"/>
-                </Trigger>
-            </Style.Triggers>-->
-        </Style>
+        </Style>-->
     </Window.Resources>
     
     <Border Background="Transparent">
@@ -96,7 +87,8 @@
                     <ColumnDefinition Width="70"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0">
+                
+                <!--<Grid Grid.Column="0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="100"/>
                         <RowDefinition Height="*"/>
@@ -148,8 +140,12 @@
                             </RadioButton.Content>
                         </RadioButton>
                     </Grid>
-                </Grid>
-                
+                </Grid>-->
+
+                <Border Grid.Column="0">
+                    <ContentControl Content="{Binding SideBarSectionView }" />
+                </Border>
+
                 <Border Grid.Column="1" Background="Transparent">
                     <Border Background="White" BorderThickness="0">
                         <Grid>
