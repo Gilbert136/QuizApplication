@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\book.png" />
+    <None Remove="Assets\course.png" />
+    <None Remove="Assets\dashboard.png" />
+    <None Remove="Assets\logo.png" />
+    <None Remove="Assets\profile.png" />
+    <None Remove="Assets\quiz.png" />
+    <None Remove="Assets\settings.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\book.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\course.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\dashboard.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\profile.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\quiz.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\settings.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\Images\" />
+    <Folder Include="Assets\Fonts\" />
+    <Folder Include="MVVM\Model\" />
+    <Folder Include="Theme\" />
+  </ItemGroup>
+
+</Project>

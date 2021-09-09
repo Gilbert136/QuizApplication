@@ -1,0 +1,23 @@
+﻿<Application x:Class="QuizApplication.UI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:QuizApplication.UI"
+             xmlns:viewModel="clr-namespace:QuizApplication.UI.MVVM.ViewModel"
+             xmlns:view="clr-namespace:QuizApplication.UI.MVVM.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <DataTemplate DataType="{x:Type viewModel:InformationSectionViewModel}">
+            <view:InformationSectionView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:ContentSectionViewModel}">
+            <view:ContentSectionView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:DetailSectionViewModel}">
+            <view:DetailSectionView/>
+        </DataTemplate>
+
+    </Application.Resources>
+</Application>
