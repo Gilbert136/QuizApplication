@@ -5,13 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace QuizApplication.UI.MVVM.ViewModel
 {
-    class InformationSectionViewModel: ObservableObject
+    public class InformationSectionViewModel : ObservableObject
     {
         public RelayCommand CourseViewComand { get; set; }
-
         public RelayCommand AchievementViewComand { get; set; }
 
 
@@ -41,20 +41,31 @@ namespace QuizApplication.UI.MVVM.ViewModel
 
             AchievementViewModel = new AchievementViewModel();
 
-
+            CurrentView = CourseViewModel;
+            //CurrentView = AchievementViewModel;
 
             CourseViewComand = new RelayCommand(o =>
             {
                 CurrentView = CourseViewModel;
             });
 
-            AchievementViewComand = new RelayCommand(o =>
-            {
-                CurrentView = AchievementViewModel;
-            });
+            //AchievementViewComand = new RelayCommand(o =>
+            //{
+            //    CurrentView = AchievementViewModel;
+            //});
 
+            AchievementViewComand = new RelayCommand(ExecuteMethod, canExecuteMethod);
+        }
 
-            CurrentView = CourseViewModel;
+        private bool canExecuteMethod(object parameter)
+        {
+            return true;
+        }
+
+        private void ExecuteMethod(object parameter)
+        {
+            CurrentView = AchievementViewModel;
+            MessageBox.Show("iiiei");
         }
     }
 }

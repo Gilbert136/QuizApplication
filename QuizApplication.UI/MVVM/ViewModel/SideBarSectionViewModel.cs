@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuizApplication.UI.MVVM.ViewModel
 {
-    class SideBarSectionViewModel
+    public class SideBarSectionViewModel
     {
     }
 }

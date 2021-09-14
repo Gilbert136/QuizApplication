@@ -9,6 +9,7 @@ namespace QuizApplication.UI.MVVM.ViewModel
 {
     class MainWindowViewModel: ObservableObject
     {
+
         public InformationSectionViewModel InformationSectionVM { get; set; }
 
         private object _informationSectionView;

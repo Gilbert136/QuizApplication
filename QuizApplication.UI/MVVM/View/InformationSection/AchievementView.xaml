@@ -5,8 +5,24 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:QuizApplication.UI.MVVM.View.InformationSection"
              mc:Ignorable="d" 
+             xmlns:informationSectionviewModel="clr-namespace:QuizApplication.UI.MVVM.ViewModel.InformationSection"
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.DataContext>
+        <informationSectionviewModel:AchievementViewModel/>
+    </UserControl.DataContext>
+
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="Achievement" FontWeight="Bold" FontSize="35" Foreground="DarkSlateGray" Margin="15,0,0,0"/>
+            <Border Height="120" Background="#1e3448" Margin="15" CornerRadius="10">
+                <TextBlock Text="Course consists of all the subjects that students are obligated to take. Students can select a course and take the corresponding quiz that is associated." FontSize="12" Foreground="white" Margin="15" TextWrapping="Wrap"/>
+            </Border>
+        </StackPanel>
     </Grid>
 </UserControl>

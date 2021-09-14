@@ -8,6 +8,8 @@
              mc:Ignorable="d" Width="70" Height="715">
 
     <UserControl.Resources>
+        <viewModel:InformationSectionViewModel x:Key="informationSectionViewModel"/>
+        
         <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
         <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
         <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
@@ -72,10 +74,6 @@
         </Style>
     </UserControl.Resources>
 
-    <UserControl.DataContext>
-        <viewModel:InformationSectionViewModel/>
-    </UserControl.DataContext>
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
@@ -105,30 +103,28 @@
                     <Image Source="/Assets/dashboard.png" Stretch="Uniform" Width="35"/>
                 </RadioButton.Content>
             </RadioButton>
-            
-            
-            
-            <RadioButton Command="{Binding CourseViewComand}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="1" Background="Transparent">
+
+            <RadioButton Command="{Binding CourseViewComand, Source={StaticResource informationSectionViewModel}}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="1" Background="Transparent">
                 <RadioButton.Content>
                     <Image Source="/Assets/course.png" Stretch="Uniform" Width="35"/>
                 </RadioButton.Content>
             </RadioButton>
-            <RadioButton Command="{Binding CourseViewComand}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="2" Background="Transparent">
+            <RadioButton Command="{Binding CourseViewComand, Source={StaticResource informationSectionViewModel}}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="2" Background="Transparent">
                 <RadioButton.Content>
                     <Image Source="/Assets/book.png" Stretch="Uniform" Width="35"/>
                 </RadioButton.Content>
             </RadioButton>
-            <RadioButton Command="{Binding AchievementViewComand}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="3" Background="Transparent">
+            <RadioButton Command="{Binding AchievementViewComand, Source={StaticResource informationSectionViewModel}}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="3" Background="Transparent">
                 <RadioButton.Content>
                     <Image Source="/Assets/quiz.png" Stretch="Uniform" Width="35"/>
                 </RadioButton.Content>
             </RadioButton>
-            <RadioButton Command="{Binding CourseViewComand}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="4" Background="Transparent">
+            <RadioButton Command="{Binding CourseViewComand, Source={StaticResource informationSectionViewModel}}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="4" Background="Transparent">
                 <RadioButton.Content>
                     <Image Source="/Assets/profile.png" Stretch="Uniform" Width="35"/>
                 </RadioButton.Content>
             </RadioButton>
-            <RadioButton Command="{Binding CourseViewComand}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="6" Background="Transparent">
+            <RadioButton Command="{Binding CourseViewComand, Source={StaticResource informationSectionViewModel}}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="6" Background="Transparent">
                 <RadioButton.Content>
                     <Image Source="/Assets/settings.png" Stretch="Uniform" Width="35"/>
                 </RadioButton.Content>

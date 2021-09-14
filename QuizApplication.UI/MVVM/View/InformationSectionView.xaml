@@ -6,10 +6,21 @@
              xmlns:local="clr-namespace:QuizApplication.UI.MVVM.View"
              mc:Ignorable="d" 
              xmlns:viewModel="clr-namespace:QuizApplication.UI.MVVM.ViewModel"
+             xmlns:informationSectionViewModel="clr-namespace:QuizApplication.UI.MVVM.ViewModel.InformationSection"
+             xmlns:informationSectionView="clr-namespace:QuizApplication.UI.MVVM.View.InformationSection"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>
         <viewModel:InformationSectionViewModel/>
     </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type informationSectionViewModel:CourseViewModel}">
+            <informationSectionView:CourseView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type informationSectionViewModel:AchievementViewModel}">
+            <informationSectionView:AchievementView/>
+        </DataTemplate>
+    </UserControl.Resources>
     
     <Grid>
         <Grid.RowDefinitions>

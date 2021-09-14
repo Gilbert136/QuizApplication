@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuizApplication.UI.MVVM.ViewModel.InformationSection
 {
-    class CourseViewModel
+    public class CourseViewModel
     {
-       
     }
 }
