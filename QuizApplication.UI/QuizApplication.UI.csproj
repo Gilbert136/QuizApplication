@@ -47,4 +47,17 @@
     <Folder Include="Theme\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="MVVM\View\InformationSection\CourseSectionView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="MVVM\View\InformationSection\CourseSectionView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
 </Project>

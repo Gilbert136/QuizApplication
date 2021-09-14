@@ -5,30 +5,21 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:QuizApplication.UI.MVVM.View"
              mc:Ignorable="d" 
+             xmlns:viewModel="clr-namespace:QuizApplication.UI.MVVM.ViewModel"
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <viewModel:InformationSectionViewModel/>
+    </UserControl.DataContext>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
+        
         <StackPanel Grid.Row="1">
-            <TextBlock Text="Course" FontWeight="Bold" FontSize="35" Foreground="DarkSlateGray" Margin="15,0,0,0"/>
-            <Border Height="120" Background="#1e3448" Margin="15" CornerRadius="10">
-                <TextBlock Text="Course consists of all the subjects that students are obligated to take. Students can select a course and take the corresponding quiz that is associated." FontSize="12" Foreground="white" Margin="15" TextWrapping="Wrap"/>
-            </Border>
-        </StackPanel>
-        <StackPanel Grid.Row="2" Orientation="Vertical">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Border Height="10" Width="60" Margin="0,0,0,5" CornerRadius="10">
-                    <TextBlock Text="Timer" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
-                </Border>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Border Height="60" Width="160" Background="#1e3448" Margin="0,0,0,0" CornerRadius="10">
-                    <TextBlock Text="00 : 00" FontSize="30" Foreground="white" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
-                </Border>
-            </StackPanel>
+            <ContentControl Content="{Binding CurrentView }" />
         </StackPanel>
     </Grid>
 </UserControl>
