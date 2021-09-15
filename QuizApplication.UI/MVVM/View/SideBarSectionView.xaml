@@ -5,10 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:QuizApplication.UI.MVVM.View"
              xmlns:viewModel="clr-namespace:QuizApplication.UI.MVVM.ViewModel"
+             x:Name="sideBar"
              mc:Ignorable="d" Width="70" Height="715">
 
     <UserControl.Resources>
-        <viewModel:InformationSectionViewModel x:Key="informationSectionViewModel"/>
+        <!--<viewModel:MainWindowViewModel x:Key="MainWindowViewModel"/>-->
         
         <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
         <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
@@ -104,27 +105,27 @@
                 </RadioButton.Content>
             </RadioButton>
 
-            <RadioButton Command="{Binding CourseViewComand, Source={StaticResource informationSectionViewModel}}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="1" Background="Transparent">
+            <RadioButton Command="{Binding ElementName=sideBar, Path=DataContext.CourseViewComand}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="1" Background="Transparent">
                 <RadioButton.Content>
                     <Image Source="/Assets/course.png" Stretch="Uniform" Width="35"/>
                 </RadioButton.Content>
             </RadioButton>
-            <RadioButton Command="{Binding CourseViewComand, Source={StaticResource informationSectionViewModel}}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="2" Background="Transparent">
+            <RadioButton Command="{Binding ElementName=sideBar, Path=DataContext.AchievementViewComand}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="2" Background="Transparent">
                 <RadioButton.Content>
                     <Image Source="/Assets/book.png" Stretch="Uniform" Width="35"/>
                 </RadioButton.Content>
             </RadioButton>
-            <RadioButton Command="{Binding AchievementViewComand, Source={StaticResource informationSectionViewModel}}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="3" Background="Transparent">
+            <RadioButton Command="{Binding ElementName=sideBar, Path=DataContext.AchievementViewComand}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="3" Background="Transparent">
                 <RadioButton.Content>
                     <Image Source="/Assets/quiz.png" Stretch="Uniform" Width="35"/>
                 </RadioButton.Content>
             </RadioButton>
-            <RadioButton Command="{Binding CourseViewComand, Source={StaticResource informationSectionViewModel}}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="4" Background="Transparent">
+            <RadioButton Command="{Binding ElementName=sideBar, Path=DataContext.AchievementViewComand}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="4" Background="Transparent">
                 <RadioButton.Content>
                     <Image Source="/Assets/profile.png" Stretch="Uniform" Width="35"/>
                 </RadioButton.Content>
             </RadioButton>
-            <RadioButton Command="{Binding CourseViewComand, Source={StaticResource informationSectionViewModel}}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="6" Background="Transparent">
+            <RadioButton Command="{Binding ElementName=sideBar, Path=DataContext.AchievementViewComand}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="6" Background="Transparent">
                 <RadioButton.Content>
                     <Image Source="/Assets/settings.png" Stretch="Uniform" Width="35"/>
                 </RadioButton.Content>

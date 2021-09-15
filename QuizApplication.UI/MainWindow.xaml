@@ -5,9 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuizApplication.UI"
         xmlns:viewModel="clr-namespace:QuizApplication.UI.MVVM.ViewModel"
-        
-        xmlns:informationSectionViewModel="clr-namespace:QuizApplication.UI.MVVM.ViewModel.InformationSection"
-        xmlns:informationSectionView="clr-namespace:QuizApplication.UI.MVVM.View.InformationSection"
+        xmlns:view="clr-namespace:QuizApplication.UI.MVVM.View"
         mc:Ignorable="d"
         Title="Quiz" Height="768" Width="1024" ResizeMode="NoResize">
     
@@ -15,11 +13,11 @@
         <viewModel:MainWindowViewModel/>
     </Window.DataContext>
 
-    <Window.Resources>
+    <!--<Window.Resources>
         <DataTemplate DataType="{x:Type informationSectionViewModel:CourseViewModel}">
             <informationSectionView:CourseView/>
         </DataTemplate>
-    </Window.Resources>
+    </Window.Resources>-->
     
     <Border Background="Transparent">
         <Border Background="white" BorderThickness="0">
@@ -30,7 +28,7 @@
                 </Grid.ColumnDefinitions>
                
                 <Border Grid.Column="0">
-                    <ContentControl Content="{Binding SideBarSectionView }" />
+                    <view:SideBarSectionView />
                 </Border>
 
                 <Border Grid.Column="1" Background="Transparent">
@@ -42,17 +40,28 @@
                                 <ColumnDefinition Width="250"/>
                             </Grid.ColumnDefinitions>
 
-                            <Border Grid.Column="0" Background="#f2f4f8">
+                            <!--<Border Grid.Column="0" Background="#f2f4f8">
                                 <ContentControl Content="{Binding InformationSectionView }" />
-                            </Border>
+                            </Border>-->
 
-                            <Border Grid.Column="1">
+                            <RadioButton Command="{Binding CourseViewComand}"></RadioButton>
+
+                            <ContentControl Grid.Column="1" Content="{Binding InformationSectionView }" />
+
+                            <RadioButton Grid.Column="2" Command="{Binding AchievementViewComand}"></RadioButton>
+                            
+                            
+                            
+                            
+                            
+                            
+                            <!--<Border Grid.Column="1">
                                 <ContentControl Content="{Binding ContentSectionView }" />
                             </Border>
                             
                             <Border Grid.Column="2" Background="#f2f4f8">
                                 <ContentControl Content="{Binding DetailSectionView }" />
-                            </Border>
+                            </Border>-->
                         </Grid>
                     </Border>
                 </Border>

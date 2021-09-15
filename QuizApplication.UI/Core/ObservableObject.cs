@@ -14,10 +14,7 @@ namespace QuizApplication.UI.Core
 
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
-            if (PropertyChanged == null)
-            {
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
 }

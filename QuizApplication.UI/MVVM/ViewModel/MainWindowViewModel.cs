@@ -1,4 +1,5 @@
 ﻿using QuizApplication.UI.Core;
+using QuizApplication.UI.MVVM.ViewModel.InformationSection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,16 @@ namespace QuizApplication.UI.MVVM.ViewModel
 {
     class MainWindowViewModel: ObservableObject
     {
+
+        public RelayCommand CourseViewComand { get; set; }
+        public RelayCommand AchievementViewComand { get; set; }
+
+
+
+        public CourseViewModel CourseViewModel { get; set; }
+        public AchievementViewModel AchievementViewModel { get; set; }
+
+
 
         public InformationSectionViewModel InformationSectionVM { get; set; }
 
@@ -25,62 +36,87 @@ namespace QuizApplication.UI.MVVM.ViewModel
         }
 
 
-        public ContentSectionViewModel ContentSectionVM { get; set; }
+        //public ContentSectionViewModel ContentSectionVM { get; set; }
 
-        private object _contentSectionView;
+        //private object _contentSectionView;
 
-        public object ContentSectionView
-        {
-            get { return _contentSectionView; }
-            set
-            {
-                _contentSectionView = value;
-                OnPropertyChanged();
-            }
-        }
+        //public object ContentSectionView
+        //{
+        //    get { return _contentSectionView; }
+        //    set
+        //    {
+        //        _contentSectionView = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
 
 
-        public DetailSectionViewModel DetailSectionVM { get; set; }
+        //public DetailSectionViewModel DetailSectionVM { get; set; }
 
-        private object _detailSectionView;
+        //private object _detailSectionView;
 
-        public object DetailSectionView
-        {
-            get { return _detailSectionView; }
-            set
-            {
-                _detailSectionView = value;
-                OnPropertyChanged();
-            }
-        }
+        //public object DetailSectionView
+        //{
+        //    get { return _detailSectionView; }
+        //    set
+        //    {
+        //        _detailSectionView = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
 
-        public SideBarSectionViewModel SideBarSectionVM { get; set; }
 
-        private object _sideBarSectionView;
+        //public SideBarSectionViewModel SideBarSectionVM { get; set; }
 
-        public object SideBarSectionView
-        {
-            get { return _sideBarSectionView; }
-            set
-            {
-                _sideBarSectionView = value;
-                OnPropertyChanged();
-            }
-        }
+        //private object _sideBarSectionView;
+
+        //public object SideBarSectionView
+        //{
+        //    get { return _sideBarSectionView; }
+        //    set
+        //    {
+        //        _sideBarSectionView = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
+
 
         public MainWindowViewModel()
         {
-            InformationSectionVM = new InformationSectionViewModel();
-            InformationSectionView = InformationSectionVM;
+            //SideBarSectionVM = new SideBarSectionViewModel();
+            //SideBarSectionView = SideBarSectionVM;
 
-            ContentSectionVM = new ContentSectionViewModel();
-            ContentSectionView = ContentSectionVM;
 
-            DetailSectionVM = new DetailSectionViewModel();
-            DetailSectionView = DetailSectionVM;
 
-            SideBarSectionVM = new SideBarSectionViewModel();
-            SideBarSectionView = SideBarSectionVM;
+
+            CourseViewModel = new CourseViewModel();
+            AchievementViewModel = new AchievementViewModel();
+
+            InformationSectionView = CourseViewModel;
+
+            CourseViewComand = new RelayCommand(o =>
+            {
+                InformationSectionView = CourseViewModel;
+            });
+
+            AchievementViewComand = new RelayCommand(o =>
+            {
+                InformationSectionView = AchievementViewModel;
+            });
+
+
+
+
+
+
+
+            //ContentSectionVM = new ContentSectionViewModel();
+            //ContentSectionView = ContentSectionVM;
+
+            //DetailSectionVM = new DetailSectionViewModel();
+            //DetailSectionView = DetailSectionVM;
+
+
         }
     }
 }

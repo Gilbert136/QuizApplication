@@ -26,8 +26,7 @@ namespace QuizApplication.UI.Core
 
         public bool CanExecute(object parameter)
         {
-            var i = _canExecute == null || _canExecute(parameter);
-            return i;
+            return _canExecute == null || _canExecute(parameter);
         }
 
         public void Execute(object parameter)
