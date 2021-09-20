@@ -21,8 +21,8 @@
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
         
-        <!--<StackPanel Grid.Row="1">
+        <StackPanel Grid.Row="1">
             <ContentControl Content="{Binding CurrentView }" />
-        </StackPanel>-->
+        </StackPanel>
     </Grid>
 </UserControl>

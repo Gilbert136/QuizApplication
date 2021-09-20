@@ -64,20 +64,23 @@ namespace QuizApplication.UI.MVVM.ViewModel
 
         public MainWindowViewModel()
         {
-            CourseViewModel = new CourseViewModel();
-            AchievementViewModel = new AchievementViewModel();
+            //CourseViewModel = new CourseViewModel();
+            //AchievementViewModel = new AchievementViewModel();
 
-            InformationSectionView = CourseViewModel;
+            //InformationSectionView = CourseViewModel;
 
-            CourseViewComand = new RelayCommand(o =>
-            {
-                InformationSectionView = CourseViewModel;
-            });
+            //CourseViewComand = new RelayCommand(o =>
+            //{
+            //    InformationSectionView = CourseViewModel;
+            //});
 
-            AchievementViewComand = new RelayCommand(o =>
-            {
-                InformationSectionView = AchievementViewModel;
-            });
+            //AchievementViewComand = new RelayCommand(o =>
+            //{
+            //    InformationSectionView = AchievementViewModel;
+            //});
+
+            InformationSectionVM = new InformationSectionViewModel();
+            InformationSectionView = InformationSectionVM;
 
             ContentSectionVM = new ContentSectionViewModel();
             ContentSectionView = ContentSectionVM;
