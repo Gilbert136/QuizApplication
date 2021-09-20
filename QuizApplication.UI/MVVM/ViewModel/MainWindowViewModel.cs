@@ -10,15 +10,12 @@ namespace QuizApplication.UI.MVVM.ViewModel
 {
     class MainWindowViewModel: ObservableObject
     {
-
         public RelayCommand CourseViewComand { get; set; }
         public RelayCommand AchievementViewComand { get; set; }
 
 
-
         public CourseViewModel CourseViewModel { get; set; }
         public AchievementViewModel AchievementViewModel { get; set; }
-
 
 
         public InformationSectionViewModel InformationSectionVM { get; set; }
@@ -36,59 +33,37 @@ namespace QuizApplication.UI.MVVM.ViewModel
         }
 
 
-        //public ContentSectionViewModel ContentSectionVM { get; set; }
+        public ContentSectionViewModel ContentSectionVM { get; set; }
 
-        //private object _contentSectionView;
+        private object _contentSectionView;
 
-        //public object ContentSectionView
-        //{
-        //    get { return _contentSectionView; }
-        //    set
-        //    {
-        //        _contentSectionView = value;
-        //        OnPropertyChanged();
-        //    }
-        //}
-
-
-        //public DetailSectionViewModel DetailSectionVM { get; set; }
-
-        //private object _detailSectionView;
-
-        //public object DetailSectionView
-        //{
-        //    get { return _detailSectionView; }
-        //    set
-        //    {
-        //        _detailSectionView = value;
-        //        OnPropertyChanged();
-        //    }
-        //}
+        public object ContentSectionView
+        {
+            get { return _contentSectionView; }
+            set
+            {
+                _contentSectionView = value;
+                OnPropertyChanged();
+            }
+        }
 
 
-        //public SideBarSectionViewModel SideBarSectionVM { get; set; }
+        public DetailSectionViewModel DetailSectionVM { get; set; }
 
-        //private object _sideBarSectionView;
+        private object _detailSectionView;
 
-        //public object SideBarSectionView
-        //{
-        //    get { return _sideBarSectionView; }
-        //    set
-        //    {
-        //        _sideBarSectionView = value;
-        //        OnPropertyChanged();
-        //    }
-        //}
-
+        public object DetailSectionView
+        {
+            get { return _detailSectionView; }
+            set
+            {
+                _detailSectionView = value;
+                OnPropertyChanged();
+            }
+        }
 
         public MainWindowViewModel()
         {
-            //SideBarSectionVM = new SideBarSectionViewModel();
-            //SideBarSectionView = SideBarSectionVM;
-
-
-
-
             CourseViewModel = new CourseViewModel();
             AchievementViewModel = new AchievementViewModel();
 
@@ -104,19 +79,11 @@ namespace QuizApplication.UI.MVVM.ViewModel
                 InformationSectionView = AchievementViewModel;
             });
 
+            ContentSectionVM = new ContentSectionViewModel();
+            ContentSectionView = ContentSectionVM;
 
-
-
-
-
-
-            //ContentSectionVM = new ContentSectionViewModel();
-            //ContentSectionView = ContentSectionVM;
-
-            //DetailSectionVM = new DetailSectionViewModel();
-            //DetailSectionView = DetailSectionVM;
-
-
+            DetailSectionVM = new DetailSectionViewModel();
+            DetailSectionView = DetailSectionVM;
         }
     }
 }
