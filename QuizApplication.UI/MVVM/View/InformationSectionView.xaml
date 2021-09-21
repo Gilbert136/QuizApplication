@@ -6,13 +6,11 @@
              xmlns:local="clr-namespace:QuizApplication.UI.MVVM.View"
              mc:Ignorable="d" 
              xmlns:viewModel="clr-namespace:QuizApplication.UI.MVVM.ViewModel"
-             xmlns:informationSectionViewModel="clr-namespace:QuizApplication.UI.MVVM.ViewModel.InformationSection"
-             xmlns:informationSectionView="clr-namespace:QuizApplication.UI.MVVM.View.InformationSection"
+             x:Name="informationSection"
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.DataContext>
+    <!--<UserControl.DataContext>
         <viewModel:InformationSectionViewModel/>
-    </UserControl.DataContext>
-
+    </UserControl.DataContext>-->
     
     <Grid>
         <Grid.RowDefinitions>
@@ -22,7 +20,7 @@
         </Grid.RowDefinitions>
         
         <StackPanel Grid.Row="1">
-            <ContentControl Content="{Binding CurrentView }" />
+            <ContentControl Content="{Binding ElementName=informationSection, Path=DataContext.InformationSectionViewModel.CurrentView }" />
         </StackPanel>
     </Grid>
 </UserControl>

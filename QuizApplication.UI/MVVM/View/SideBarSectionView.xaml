@@ -8,9 +8,11 @@
              x:Name="sideBar"
              mc:Ignorable="d" Width="70" Height="715">
 
+    <!--<UserControl.DataContext>
+        <viewModel:InformationSectionViewModel x:Name="InformationSectionViewModel"/>
+    </UserControl.DataContext>-->
+
     <UserControl.Resources>
-        <!--<viewModel:MainWindowViewModel x:Key="MainWindowViewModel"/>-->
-        
         <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
         <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
         <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
@@ -98,33 +100,33 @@
                 <RowDefinition Height="70"/>
             </Grid.RowDefinitions>
 
-            <RadioButton Style="{DynamicResource menuButtonTemplate}" Grid.Row="0" Background="Transparent" IsChecked="true">
+            <RadioButton Command="{Binding ElementName=sideBar, Path=DataContext.InformationSectionViewModel.CourseViewComand}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="0" Background="Transparent" IsChecked="true">
                 <RadioButton.Content>
                     <Image Source="/Assets/dashboard.png" Stretch="Uniform" Width="35"/>
                 </RadioButton.Content>
             </RadioButton>
 
-            <RadioButton Command="{Binding ElementName=sideBar, Path=DataContext.CourseViewComand}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="1" Background="Transparent">
+            <RadioButton Command="{Binding ElementName=sideBar, Path=DataContext.InformationSectionViewModel.AchievementViewComand}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="1" Background="Transparent">
                 <RadioButton.Content>
                     <Image Source="/Assets/course.png" Stretch="Uniform" Width="35"/>
                 </RadioButton.Content>
             </RadioButton>
-            <RadioButton Command="{Binding ElementName=sideBar, Path=DataContext.AchievementViewComand}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="2" Background="Transparent">
+            <RadioButton Command="{Binding ElementName=sideBar, Path=DataContext.InformationSectionViewModel.AchievementViewComand}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="2" Background="Transparent">
                 <RadioButton.Content>
                     <Image Source="/Assets/book.png" Stretch="Uniform" Width="35"/>
                 </RadioButton.Content>
             </RadioButton>
-            <RadioButton Command="{Binding ElementName=sideBar, Path=DataContext.AchievementViewComand}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="3" Background="Transparent">
+            <RadioButton Command="{Binding ElementName=sideBar, Path=DataContext.InformationSectionViewModel.AchievementViewComand}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="3" Background="Transparent">
                 <RadioButton.Content>
                     <Image Source="/Assets/quiz.png" Stretch="Uniform" Width="35"/>
                 </RadioButton.Content>
             </RadioButton>
-            <RadioButton Command="{Binding ElementName=sideBar, Path=DataContext.AchievementViewComand}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="4" Background="Transparent">
+            <RadioButton Command="{Binding ElementName=sideBar, Path=DataContext.InformationSectionViewModel.AchievementViewComand}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="4" Background="Transparent">
                 <RadioButton.Content>
                     <Image Source="/Assets/profile.png" Stretch="Uniform" Width="35"/>
                 </RadioButton.Content>
             </RadioButton>
-            <RadioButton Command="{Binding ElementName=sideBar, Path=DataContext.AchievementViewComand}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="6" Background="Transparent">
+            <RadioButton Command="{Binding ElementName=sideBar, Path=DataContext.InformationSectionViewModel.AchievementViewComand}" Style="{DynamicResource menuButtonTemplate}" Grid.Row="6" Background="Transparent">
                 <RadioButton.Content>
                     <Image Source="/Assets/settings.png" Stretch="Uniform" Width="35"/>
                 </RadioButton.Content>

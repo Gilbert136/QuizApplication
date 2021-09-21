@@ -10,28 +10,7 @@ namespace QuizApplication.UI.MVVM.ViewModel
 {
     class MainWindowViewModel: ObservableObject
     {
-        public RelayCommand CourseViewComand { get; set; }
-        public RelayCommand AchievementViewComand { get; set; }
-
-
-        public CourseViewModel CourseViewModel { get; set; }
-        public AchievementViewModel AchievementViewModel { get; set; }
-
-
-        public InformationSectionViewModel InformationSectionVM { get; set; }
-
-        private object _informationSectionView;
-
-        public object InformationSectionView
-        {
-            get { return _informationSectionView; }
-            set
-            {
-                _informationSectionView = value;
-                OnPropertyChanged();
-            }
-        }
-
+        public InformationSectionViewModel InformationSectionViewModel { get; set; }
 
         public ContentSectionViewModel ContentSectionVM { get; set; }
 
@@ -46,7 +25,6 @@ namespace QuizApplication.UI.MVVM.ViewModel
                 OnPropertyChanged();
             }
         }
-
 
         public DetailSectionViewModel DetailSectionVM { get; set; }
 
@@ -64,23 +42,7 @@ namespace QuizApplication.UI.MVVM.ViewModel
 
         public MainWindowViewModel()
         {
-            //CourseViewModel = new CourseViewModel();
-            //AchievementViewModel = new AchievementViewModel();
-
-            //InformationSectionView = CourseViewModel;
-
-            //CourseViewComand = new RelayCommand(o =>
-            //{
-            //    InformationSectionView = CourseViewModel;
-            //});
-
-            //AchievementViewComand = new RelayCommand(o =>
-            //{
-            //    InformationSectionView = AchievementViewModel;
-            //});
-
-            InformationSectionVM = new InformationSectionViewModel();
-            InformationSectionView = InformationSectionVM;
+            InformationSectionViewModel = new InformationSectionViewModel();
 
             ContentSectionVM = new ContentSectionViewModel();
             ContentSectionView = ContentSectionVM;

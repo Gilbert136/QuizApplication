@@ -6,18 +6,27 @@
         xmlns:local="clr-namespace:QuizApplication.UI"
         xmlns:viewModel="clr-namespace:QuizApplication.UI.MVVM.ViewModel"
         xmlns:view="clr-namespace:QuizApplication.UI.MVVM.View"
+        xmlns:informationSectionViewModel="clr-namespace:QuizApplication.UI.MVVM.ViewModel.InformationSection"
+        xmlns:informationSectionView="clr-namespace:QuizApplication.UI.MVVM.View.InformationSection"
         mc:Ignorable="d"
         Title="Quiz" Height="768" Width="1024" ResizeMode="NoResize">
-    
     <Window.DataContext>
         <viewModel:MainWindowViewModel/>
     </Window.DataContext>
 
     <!--<Window.Resources>
+        <viewModel:InformationSectionViewModel x:Name="InformationSectionViewModel" x:Key="InformationSectionViewModel"/>
+    </Window.Resources>-->
+
+    <Window.Resources>
         <DataTemplate DataType="{x:Type informationSectionViewModel:CourseViewModel}">
             <informationSectionView:CourseView/>
         </DataTemplate>
-    </Window.Resources>-->
+        
+        <DataTemplate DataType="{x:Type informationSectionViewModel:AchievementViewModel}">
+            <informationSectionView:AchievementView/>
+        </DataTemplate>
+    </Window.Resources>
     
     <Border Background="Transparent">
         <Border Background="white" BorderThickness="0">
@@ -28,7 +37,9 @@
                 </Grid.ColumnDefinitions>
                
                 <Border Grid.Column="0">
-                    <view:SideBarSectionView />
+                    <ContentControl>
+                        <view:SideBarSectionView />
+                    </ContentControl>
                 </Border>
 
                 <Border Grid.Column="1" Background="Transparent">
@@ -41,7 +52,12 @@
                             </Grid.ColumnDefinitions>
 
                             <Border Grid.Column="0" Background="#f2f4f8">
-                                <ContentControl Content="{Binding InformationSectionView }" />
+                                <view:InformationSectionView />
+                                <!--<ContentControl Content="{Binding Source={StaticResource InformationSectionViewModel}, Path=CurrentView }" />-->
+                                <!--<ContentControl Content="{Binding ElementName=InformationSectionViewModel, Path=CurrentView }" />-->
+                                <!--<ContentControl Content="{Binding InformationSectionView }" />-->
+                                <!--<ContentControl Content="{Binding InformationSectionViewModel.CurrentView }" />-->
+                                <!--<ContentControl Content="{Binding CurrentView path=DataContext.InformationSectionViewModel }" />-->
                             </Border>
                             
                             <Border Grid.Column="1">
