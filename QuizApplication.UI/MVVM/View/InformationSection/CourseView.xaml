@@ -23,6 +23,13 @@
             <Border Height="120" Background="#1e3448" Margin="15" CornerRadius="10">
                 <TextBlock Text="Course consists of all the subjects that students are obligated to take. Students can select a course and take the corresponding quiz that is associated." FontSize="12" Foreground="white" Margin="15" TextWrapping="Wrap"/>
             </Border>
+            <Border >
+                <StackPanel>
+                    <Border Height="40" Background="#1e3448" Margin="15 0 15 15" CornerRadius="10">
+                        <TextBlock VerticalAlignment="Center" Text="Mathematics" FontSize="12" Foreground="white" Margin="15" TextWrapping="Wrap"/>
+                    </Border>
+                </StackPanel>
+            </Border>
         </StackPanel>
     </Grid>
 </UserControl>
