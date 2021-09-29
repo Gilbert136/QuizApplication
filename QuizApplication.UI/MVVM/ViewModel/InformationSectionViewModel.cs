@@ -1,5 +1,6 @@
 ﻿using QuizApplication.UI.Core;
 using QuizApplication.UI.MVVM.ViewModel.InformationSection;
+using QuizApplication.UI.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,9 @@ namespace QuizApplication.UI.MVVM.ViewModel
 
         public InformationSectionViewModel()
         {
-            CourseViewModel = new CourseViewModel();
+            var dataService = new MockService();
+
+            CourseViewModel = new CourseViewModel(dataService);
             AchievementViewModel = new AchievementViewModel();
 
             CurrentView = CourseViewModel;

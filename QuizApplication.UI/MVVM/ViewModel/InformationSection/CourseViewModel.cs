@@ -1,4 +1,5 @@
 ﻿using QuizApplication.UI.Core;
+using QuizApplication.UI.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace QuizApplication.UI.MVVM.ViewModel.InformationSection
 {
     public class CourseViewModel : ObservableObject
     {
+        private ICourseDataService _service;
         private CoursesViewModel _coursesViewModel;
         public CoursesViewModel CoursesViewModel
         {
@@ -23,8 +25,9 @@ namespace QuizApplication.UI.MVVM.ViewModel.InformationSection
 
         public ICommand LoadCoursesCommand { get; private set; }
 
-        public CourseViewModel() 
+        public CourseViewModel(ICourseDataService service) 
         {
+            _service = service;
             CoursesViewModel = new CoursesViewModel();
             LoadCoursesCommand = new RelayCommand(o =>
             {
@@ -34,7 +37,7 @@ namespace QuizApplication.UI.MVVM.ViewModel.InformationSection
 
         private void LoadCourses()
         {
-
+            CoursesViewModel.LoadCourses(_service.GetCourses());
         }
     }
 }

@@ -10,6 +10,6 @@ namespace QuizApplication.UI.Services
     public interface ICourseDataService
     {
         IEnumerable<Course> GetCourses();
-        void Save(IEnumerable<Course> couses);
+        void Save(IEnumerable<Course> courses);
     }
 }

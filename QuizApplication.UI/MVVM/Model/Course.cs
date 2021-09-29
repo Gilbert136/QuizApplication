@@ -9,8 +9,8 @@ namespace QuizApplication.UI.MVVM.Model
 {
     public class Course: ObservableObject
     {
-        private string _id;
-        public string Id
+        private int _id;
+        public int Id
         {
             get { return _id; }
             set { 
