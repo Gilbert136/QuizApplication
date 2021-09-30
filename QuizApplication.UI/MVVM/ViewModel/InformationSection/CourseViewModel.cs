@@ -25,6 +25,11 @@ namespace QuizApplication.UI.MVVM.ViewModel.InformationSection
 
         public ICommand LoadCoursesCommand { get; private set; }
 
+        public CourseViewModel()
+        {
+            CoursesViewModel = new CoursesViewModel();
+        }
+
         public CourseViewModel(ICourseDataService service) 
         {
             _service = service;

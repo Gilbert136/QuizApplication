@@ -25,6 +25,13 @@
             </Border>
             <Border >
                 <StackPanel>
+                    <ListView ItemsSource="{Binding CoursesViewModel.Courses }" SelectedItem="{Binding CoursesViewModel.SelectedCourse }">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                     <Border Height="40" Background="#1e3448" Margin="15 0 15 15" CornerRadius="10">
                         <TextBlock VerticalAlignment="Center" Text="Mathematics" FontSize="12" Foreground="white" Margin="15" TextWrapping="Wrap"/>
                     </Border>

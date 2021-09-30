@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:QuizApplication.UI"
              xmlns:viewModel="clr-namespace:QuizApplication.UI.MVVM.ViewModel"
              xmlns:view="clr-namespace:QuizApplication.UI.MVVM.View"
+             
+             xmlns:informationSectionViewModel="clr-namespace:QuizApplication.UI.MVVM.ViewModel.InformationSection"
+             xmlns:informationSectionView="clr-namespace:QuizApplication.UI.MVVM.View.InformationSection"
+
              StartupUri="MainWindow.xaml">
     <Application.Resources>
 
@@ -22,5 +26,6 @@
         <DataTemplate DataType="{x:Type viewModel:SideBarSectionViewModel}">
             <view:SideBarSectionView/>
         </DataTemplate>
+
     </Application.Resources>
 </Application>
