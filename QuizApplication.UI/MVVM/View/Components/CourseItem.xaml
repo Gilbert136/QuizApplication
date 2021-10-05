@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="QuizApplication.UI.MVVM.View.Components.CourseItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuizApplication.UI.MVVM.View.Components"
+             mc:Ignorable="d" d:DesignWidth="800">
+    <StackPanel Width="230">
+        <Border Height="40" Background="#1e3448" Margin="0" CornerRadius="10">
+            <TextBlock VerticalAlignment="Center" Text="Mathematics" FontSize="12" Foreground="white" Margin="15" TextWrapping="Wrap"/>
+        </Border>
+    </StackPanel>
+</UserControl>

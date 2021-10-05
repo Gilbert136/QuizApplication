@@ -1,5 +1,6 @@
 ﻿using QuizApplication.UI.Core;
 using QuizApplication.UI.MVVM.Model;
+using QuizApplication.UI.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -25,7 +26,9 @@ namespace QuizApplication.UI.MVVM.ViewModel.InformationSection
 
         public CoursesViewModel()
         {
-
+            var courses = new MockService();
+            Courses = new ObservableCollection<Course>(courses.GetCourses());
+            OnPropertyChanged("Courses");
         }
 
         public void LoadCourses(IEnumerable<Course> courses)

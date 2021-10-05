@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:QuizApplication.UI.MVVM.View.InformationSection"
              mc:Ignorable="d" 
              xmlns:informationSectionviewModel="clr-namespace:QuizApplication.UI.MVVM.ViewModel.InformationSection"
+             xmlns:Components="clr-namespace:QuizApplication.UI.MVVM.View.Components"
              d:DesignHeight="450" d:DesignWidth="800">
     
     <UserControl.DataContext>
@@ -28,7 +29,7 @@
                     <ListView ItemsSource="{Binding CoursesViewModel.Courses }" SelectedItem="{Binding CoursesViewModel.SelectedCourse }">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                
+                                <Components:CourseItem/>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>

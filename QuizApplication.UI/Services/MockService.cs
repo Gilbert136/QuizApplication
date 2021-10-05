@@ -24,6 +24,11 @@ namespace QuizApplication.UI.Services
                 {
                     Id = 2,
                     Name = "Mathematics"
+                },
+                new Course
+                {
+                    Id = 3,
+                    Name = "Mathematics"
                 }
             };
         }
